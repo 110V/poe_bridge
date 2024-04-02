@@ -1,0 +1,23 @@
+{
+    "manifest_version": 2,
+    "name": "poe bridge",
+    "version": "1.0",
+    "description": "poe bridge",
+    "icons": {
+      "48": "icons/icon.png"
+    },
+    "browser_action": {
+      "default_popup": "popup/popup.html"
+    },
+    "background": {
+      "page": "scripts/main.html",
+      "persistent": true
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://poe.com/chat/*"],
+        "js": ["scripts/page.js"]
+      }
+    ],
+    "permissions": ["activeTab", "ws://localhost/*"]
+  }
